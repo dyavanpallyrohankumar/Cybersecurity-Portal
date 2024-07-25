@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Portal</title>
+
+    <style>
+        * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        border-radius: 10px;
+        }
+
+        body,html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: 0.5fr 0.1fr 0.1fr 2fr;
+            grid-template-areas:
+                "header header"
+                "slogan slogan"
+                "scrollbar scrollbar"
+                "sidebar main";
+            gap: 3px;
+            /* background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0, 0.4);  */
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            padding: 4px;
+            /* text-align: center; */
+            background-color: rgb(32, 32, 32);
+
+        }
+
+        .header,
+        .slogan,
+        .scrollbar,
+        .sidebar,
+        .main {
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+/* HEAD SECTION */
+        .header {
+            grid-area: header;
+            display: grid;
+            grid-template-columns: 0.1fr 1fr 0.1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:
+                "logo1 heading logo2";
+        }
+
+        .avnl-logo {
+            height: 130px;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 45px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 0 0 10px;
+            text-shadow: 1px 1px 10px #000000;
+            color: #2196F3;
+            background-image: linear-gradient(to right, #FFD700, #FFA500);
+            text-shadow: 2px 2px 4px #ff00009f;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            cursor:default;
+        }
+
+        .tank {
+            height: 130px;
+        }
+/* HEAD SECTION */
+
+/* SLOGAN SECTION */
+        .slogan {
+            grid-area: slogan;
+        }
+
+        .quote {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+            color: #9900ff;
+            margin: 0;
+            cursor:default;
+        }
+/* SLOGAN SECTION */
+
+/* NOTICEBAR SECTION */
+        .scrollbar {
+            grid-area: scrollbar;
+        }
+
+        strong {
+            font-size: 27px;
+            color: rgb(235, 231, 219);
+        }
+
+        @keyframes shine {
+    0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+    50% { color: #00ff00; text-shadow: 0 0 20px #00ff00; }
+    100% { color: #00ffff; text-shadow: 0 0 30px #00fff2; }
+  }
+  .shining-text {
+    animation: shine 1s infinite alternate;
+  }
+/* NOTICEBAR SECTION */
+
+/* SIDEBAR SECTION */
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .div1,.div2,.div3,.div4,.div5,.div6 {
+            display: none;
+        }
+
+        .button {
+            text-decoration: none;
+            width: 240px;
+        }
+
+        .color-slide-button {
+            border: solid black;
+            height: 70px;
+            width: 240px;
+            font-size: larger;
+            font-weight: 600;
+            margin: 10px 15px;
+        }
+
+        .color-slide-button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-image: linear-gradient(to right, #4CAF50, #2196F3);
+            color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+            z-index: 1;
+        }
+
+        .color-slide-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, #008cff, #00ff08);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .color-slide-button:hover::before {
+            left: 0;
+        }
+
+        .color-slide-button:hover {
+            color:#2e2e9a;
+        }
+/* SIDEBAR SECTION */
+
+
+/* MAIN SECTION */
+
+        .hidden {
+            display: none;
+        }
+        .main{
+            text-align: left;
+            padding:20px;
+            background-image: url("./ANIMATION-logo.gif");
+            /* filter: blur(8px);
+            -webkit-filter: blur(8px); */
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        li{
+            text-align:left ;
+            color: chartreuse; 
+        }
+
+        a{
+            color:greenyellow;
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        a:hover{
+            color: #3498db;
+        }
+/* MAIN SECTION */
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="bg-image"></div>
+    <div class="container">
+
+<!-- /* HEAD SECTION */ -->
+
+        <div class="header">
+            <img class="avnl-logo" src="AVNL.png" alt="">
+            <div>
+                <p class="heading">ORDNANCE FACTORY MEDAK</p>
+                <p class="heading">CYBER SECURITY PORTAL</p>
+            </div>
+            <img class="tank" src="cybershield.png" alt="">
+        </div>
+
+<!-- /* HEAD SECTION */ -->
+
+<!-- /* SLOGAN SECTION */ -->
+
+        <div class="slogan">
+            <p class="quote">Don’t wait for the breach to teach</p>
+        </div>
+
+<!-- /* SLOGAN SECTION */ -->
+
+<!-- /* SCROLLBAR SECTION */ -->
+
+        <div class="scrollbar">
+            <marquee scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()">
+                <strong class="shining-text">New Modus Operandi Targeting Defence Personnel: Vishing and Phishing</strong>
+            </marquee>
+        </div>
+
+<!-- /* SCROLLBAR SECTION */ -->
+        
+<!-- /* SIDEBAR SECTION */ -->
+
+        <div class="sidebar">
+            <a id="div1" href="" class="button"><button class="color-slide-button" onclick="event.preventDefault();showdiv('table-1')" >GENERAL CIRCULARS</button></a>
+            <a id="div2" href="" class="button"><button class="color-slide-button" onclick="event.preventDefault();showdiv('table-2')" >ADVISORIES</button></a>
+            <a id="div3" href="" class="button"><button class="color-slide-button" onclick="event.preventDefault();showdiv('table-3')">LCSC CIRCULARS</button></a>
+            <a id="div4" href="" class="button"><button class="color-slide-button" onclick="event.preventDefault();showdiv('table-4')">DIRECTIVES ON WiFi</button></a>
+            <a id="div5" href="" class="button"><button class="color-slide-button" onclick="event.preventDefault();showdiv('table-5')">DO's & DONT's</button></a>
+            <a id="div6" href="" class="button"><button class="color-slide-button" onclick="event.preventDefault();showdiv('table-6')">PHISHING/ VISHING</button></a>
+        </div>
+
+<!-- /* SCROLLBAR SECTION */ -->
+
+<!-- /* MAIN SECTION */ -->
+
+        <div class="main">
+
+            <div id="table-1" class="s hidden">
+                <?php
+                $dir = "/stand/qms/1/";
+                $files = scandir($dir, 1);
+                for ($i = 0; $i < count($files); $i++) {
+                    if ($files[$i] <> '.' && $files[$i] <> '..') {
+                        $ex = explode(".", $files[$i]);
+                        echo " <li> <a href='1" . $files[$i] . "' target='_blank'>" . $ex[0] . "</a> </li>";
+                    }
+                }
+                ?>
+            </div>
+
+            <div id="table-2" class="s hidden">
+                <?php
+                $dir = "/stand/qms/2/";
+                $files = scandir($dir, 1);
+                for ($i = 0; $i < count($files); $i++) {
+                    if ($files[$i] <> '.' && $files[$i] <> '..') {
+                        echo "  <li><a href='2/" . $files[$i] . "' target='_blank'>" . $files[$i] . "</a></li>";
+                    }
+                }
+                ?>
+            </div>
+
+            <div id="table-3" class="s hidden" >
+                <?php
+                $dir = "/stand/qms/3/";
+                $files = scandir($dir, 1);
+                for ($i = 0; $i < count($files); $i++) {
+                    if ($files[$i] <> '.' && $files[$i] <> '..') {
+                        echo "  <li><a href='3/" . $files[$i] . "' target='_blank'>" . $files[$i] . "</a></li>";
+                    }
+                }
+                ?>
+            </div>
+
+            <div id="table-4" class="s hidden" >
+                <?php
+                $dir = "/stand/qms/4/";
+                $files = scandir($dir, 1);
+                for ($i = 0; $i < count($files); $i++) {
+                    if ($files[$i] <> '.' && $files[$i] <> '..') {
+                        echo "  <li><a href='4/" . $files[$i] . "' target='_blank'>" . $files[$i] . "</a></li>";
+                    }
+                }
+                ?>
+            </div>
+
+            <div id="table-5" class="s hidden">
+                <?php
+                $dir = "/stand/qms/5/";
+                $files = scandir($dir, 1);
+                for ($i = 0; $i < count($files); $i++) {
+                    if ($files[$i] <> '.' && $files[$i] <> '..') {
+                        echo "  <li><a href='5/" . $files[$i] . "' target='_blank'>" . $files[$i] . "</a></li>";
+                    }
+                }
+                ?>
+            </div>
+
+            <div id="table-6" class="s hidden">
+                <?php
+                $dir = "/stand/qms/6/";
+                $files = scandir($dir, 1);
+                for ($i = 0; $i < count($files); $i++) {
+                    if ($files[$i] <> '.' && $files[$i] <> '..') {
+                        echo "  <li><a href='6/" . $files[$i] . "' target='_blank'>" . $files[$i] . "</a></li>";
+                    }
+                }
+                ?>
+            </div>
+
+            <div id="table-7" class="s hidden">
+                <?php
+                $dir = "/stand/qms/7/";
+                $files = scandir($dir, 1);
+                for ($i = 0; $i < count($files); $i++) {
+                    if ($files[$i] <> '.' && $files[$i] <> '..') {
+                        echo "  <a href='7/" . $files[$i] . "' target='_blank'>" . $files[$i] . "</a><br>";
+                    }
+                }
+                ?>
+            </div>
+
+        </div>
+<!-- /* MAIN SECTION */ -->
+
+    </div>
+    <script>
+        function showdiv(divid) {
+            let tables = document.getElementsByClassName("s");
+            for(let i = 0; i < tables.length; i++) {
+                document.getElementById(tables[i].id).classList.add("hidden");
+            }
+            document.getElementById(divid).classList.remove("hidden");
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+<!-- DESIGNED & DEVOLOPED BY DYAVANPALLY ROHANKUMAR, ANDE RAHUL, DUMPALA SAIKIRAN 
+  	 JNTUH (RAJANNA SIRCILLA) STUDENTS 
+	 FOR DETAILS CONTACT US ON LINKEDIN 
+	 "https://in.linkedin.com/in/dyavanpallyrohankumar"
+	 "https://www.linkedin.com/in/dumpalasaikiran"
+	 "https://in.linkedin.com/in/rahul-ande"
+-->
